@@ -14,7 +14,10 @@ public class Heartcollectable : MonoBehaviour
         {
             collision.GetComponent<PlayerHealth>().Heal(healthValue);
             gameObject.SetActive(false);
-
+            
         }
     }
+
+
+
 }
