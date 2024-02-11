@@ -8,7 +8,7 @@ public class boneCollector : MonoBehaviour
     {
 
 
-        if (collision.gameObject.CompareTag("collectable"))
+        if (collision.gameObject.CompareTag("Collectable"))
         {
             Destroy(collision.gameObject);
 
