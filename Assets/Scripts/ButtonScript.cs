@@ -8,18 +8,26 @@ public class ButtonScript : MonoBehaviour
  
     public Text textDisplay;
 
+    //void Start()
+   
     void Start()
     {
-        // Deactivate the deathText when the game starts
+        // Deactivate the text when the game starts
         textDisplay.gameObject.SetActive(false);
     }
+
     // This method will be called when the button is clicked
     public void DisplayText()
     {
-        textDisplay.gameObject.SetActive(true);
-        textDisplay.text = "Right arrow - right movement" +
-            " Left arrow - Left movement" +
-            " Space - Jump";
+        // Toggle the visibility of the text
+        textDisplay.gameObject.SetActive(!textDisplay.gameObject.activeSelf);
+
+        // If the text is being activated, set its content
+        if (textDisplay.gameObject.activeSelf)
+        {
+            textDisplay.text = "Right arrow - right movement\n" + " Left arrow - Left movement\n" + " Space - Jump";
+        }
     }
+
 }
 
