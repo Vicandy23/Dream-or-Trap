@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bonecollect : MonoBehaviour
+public class boneCollector : MonoBehaviour
 {
-    private int bone= 0;
-    
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
@@ -13,8 +11,8 @@ public class bonecollect : MonoBehaviour
         if (collision.gameObject.CompareTag("collectable"))
         {
             Destroy(collision.gameObject);
-            bone = bone++;
-            
+
+
         }
     }
 }

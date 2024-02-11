@@ -8,6 +8,7 @@ public class PlayerHealth : MonoBehaviour
     public int maxHealth = 100;
     int currentHealth;
     [SerializeField] HealthBarBehavior healthBar;
+    
 
     void Start()
     {
@@ -21,6 +22,14 @@ public class PlayerHealth : MonoBehaviour
         healthBar.UpdateHealthBar(currentHealth, maxHealth);
         currentHealth -= damage;
         if (currentHealth <= 0)
+        {
+            Die();
+            RestartLevel();
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Trap"))
         {
             Die();
             RestartLevel();
