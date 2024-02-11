@@ -2,20 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
     public float maxHealth = 100;
     float currentHealth;
     [SerializeField] HealthBarBehavior healthBar;
-    
+    public Text deathText;
 
     void Start()
     {
         currentHealth = maxHealth;
         healthBar.UpdateHealthBar(currentHealth, maxHealth);
         healthBar = GetComponentInChildren<HealthBarBehavior>();
+        deathText.gameObject.SetActive(false);
     }
+
 
     public void Takedamage(float damage)
     {
@@ -24,7 +27,10 @@ public class PlayerHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             Die();
-            RestartLevel();
+            ShowDeathMessage();
+            
+             RestartLevel();
+
         }
     }
     public void Heal(float ammount)
@@ -44,19 +50,28 @@ public class PlayerHealth : MonoBehaviour
         if (collision.gameObject.CompareTag("Trap"))
         {
             Die();
+            ShowDeathMessage();
             RestartLevel();
+            
         }
     }
     void Die()
     {
-
         Destroy(gameObject);
-
-
     }
+
     private void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+   
+
+    private void ShowDeathMessage()
+    {
+        deathText.gameObject.SetActive(true); 
+        deathText.text = "You died";
+       
+    }
+  
 }
 
