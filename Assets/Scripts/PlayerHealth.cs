@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int maxHealth = 100;
-    int currentHealth;
+    public float maxHealth = 100;
+    float currentHealth;
     [SerializeField] HealthBarBehavior healthBar;
     
 
@@ -17,7 +17,7 @@ public class PlayerHealth : MonoBehaviour
         healthBar = GetComponentInChildren<HealthBarBehavior>();
     }
 
-    public void Takedamage(int damage)
+    public void Takedamage(float damage)
     {
         healthBar.UpdateHealthBar(currentHealth, maxHealth);
         currentHealth -= damage;
@@ -26,6 +26,18 @@ public class PlayerHealth : MonoBehaviour
             Die();
             RestartLevel();
         }
+    }
+    public void Heal(float ammount)
+    {
+        //currentHealth += ammount;
+        //if (currentHealth> maxHealth)
+        //{
+        //    currentHealth = maxHealth;
+        //}
+        currentHealth = Mathf.Clamp(currentHealth + ammount, 0, maxHealth);
+
+
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
