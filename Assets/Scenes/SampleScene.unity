@@ -1035,7 +1035,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Escape
+  m_Text: Dont Follow Him
 --- !u!222 &71164124
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2258,7 +2258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planePrefab: {fileID: 572311306}
-  displayTime: 50
+  displayTime: 80
 --- !u!114 &197758151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76131,8 +76131,8 @@ MonoBehaviour:
   - '???: Good job ! You just won 8 coppers ! Its time to leave!'
   - 'Peter: Wait.... Are you Hades...? Where am I really ?'
   - 'Hades: Dont think too much lets get out of here NOW !'
-  - Press Button FOLLOW HIM If you want to follow him or press button Escape if you
-    dont trust him.
+  - Press Button FOLLOW HIM If you want to follow him or press button DONT FOLLOW
+    HIM  if you dont trust him.
   textSpeed: 0.1
   buttonsToShow:
   - {fileID: 783786246}
@@ -76752,7 +76752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a8bf700f956c9d4f8189e600faa1082, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 50
+  delay: 100
 --- !u!1 &2005222395
 GameObject:
   m_ObjectHideFlags: 0
