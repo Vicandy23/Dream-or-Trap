@@ -9,7 +9,7 @@ public class DestroyGameobject : MonoBehaviour
     void Start()
     {
         Debug.Log("DestroyAfterDelay script started.");
-        // Call the Destroy method after the specified delay
+        
         Destroy(gameObject, delay);
     }
 }

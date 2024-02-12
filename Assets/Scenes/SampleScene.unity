@@ -76131,8 +76131,8 @@ MonoBehaviour:
   - '???: Good job ! You just won 8 coppers ! Its time to leave!'
   - 'Peter: Wait.... Are you Hades...? Where am I really ?'
   - 'Hades: Dont think too much lets get out of here NOW !'
-  - Press Button FOLLOW HIM If you want to follow him or press button DONT FOLLOW
-    HIM  if you dont trust him.
+  - Press Button FOLLOW HIM If you want to follow him or press button DONT FOLLOW 
+    if you dont trust him.
   textSpeed: 0.1
   buttonsToShow:
   - {fileID: 783786246}
