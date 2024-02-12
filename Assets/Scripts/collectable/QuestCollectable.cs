@@ -7,7 +7,9 @@ public class QuestCollectable : MonoBehaviour
 {
 
     public Text collectText; // Reference to the UI Text component
-    public string collectedMessage = "Its so lonely here.. Hades hurt me all the time.. \n" + "I had only 4 coppers.. Now i cant pass the river and go to the underworld\n"+"I am stuck here between life and death and i cant leave.."; // Default collected message
+    public string collectedMessage = "Its so lonely here.. Hades hurt me all the time.. \n" 
+        + "I had only 4 coppers.. Now i cant pass the river and go to the underworld\n"
+        +"I am stuck here between life and death and i cant leave.."; // Default collected message
     public float displayTime = 6f; // Time to display the text
 
     void Start()

@@ -35,11 +35,7 @@ public class PlayerHealth : MonoBehaviour
     }
     public void Heal(float ammount)
     {
-        //currentHealth += ammount;
-        //if (currentHealth> maxHealth)
-        //{
-        //    currentHealth = maxHealth;
-        //}
+       
         currentHealth = Mathf.Clamp(currentHealth + ammount, 0, maxHealth);
 
 
