@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class buttonscript2 : MonoBehaviour
 {
@@ -47,9 +48,8 @@ public class buttonscript2 : MonoBehaviour
 
     void EndGame()
     {
-        // Add code here to end the game
-        Debug.Log("Game Ended");
-        // Example: Application.Quit(); to quit the application
+        // Load the end game scene
+        SceneManager.LoadScene("EndGameScene");
     }
 
 }
