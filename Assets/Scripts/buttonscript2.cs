@@ -48,8 +48,8 @@ public class buttonscript2 : MonoBehaviour
 
     void EndGame()
     {
-        // Load the end game scene
-        SceneManager.LoadScene("EndGameScene");
+        
+        Application.Quit();
     }
 
 }

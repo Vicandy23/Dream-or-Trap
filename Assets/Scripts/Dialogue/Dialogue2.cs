@@ -8,7 +8,7 @@ public class Dialogue2 : MonoBehaviour
     public TextMeshProUGUI textComponent;
     public string[] lines;
     public float textSpeed;
-    public GameObject buttonToShow; // Reference to the button you want to show
+    public GameObject[] buttonsToShow; // Reference to the buttons you want to show
 
     private int index;
 
@@ -47,7 +47,6 @@ public class Dialogue2 : MonoBehaviour
         {
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
-
         }
     }
 
@@ -58,12 +57,14 @@ public class Dialogue2 : MonoBehaviour
             index++;
             textComponent.text = string.Empty;
             StartCoroutine(TypeLine());
-
         }
         else
         {
-            // If dialogue ends, activate the button
-            buttonToShow.SetActive(true);
+            // If dialogue ends, activate all the buttons
+            foreach (GameObject button in buttonsToShow)
+            {
+                button.SetActive(true);
+            }
             gameObject.SetActive(false); // Optionally deactivate the dialogue object
         }
     }

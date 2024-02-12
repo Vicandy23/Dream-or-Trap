@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class boneCollector : MonoBehaviour
+public class QuestCollectable : MonoBehaviour
 {
-    
 
-   
     public Text collectText; // Reference to the UI Text component
-    public string collectedMessage = "You just collected a bone!\n" + "Press left control to attack!"; // Default collected message
+    public string collectedMessage = "Its so lonely here.. Hades hurt me all the time.. \n" + "I had only 4 coppers.. Now i cant pass the river and go to the underworld\n"+"I am stuck here between life and death and i cant leave.."; // Default collected message
     public float displayTime = 6f; // Time to display the text
 
     void Start()
@@ -19,7 +17,7 @@ public class boneCollector : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Collectable"))
+        if (collision.gameObject.CompareTag("Quest"))
         {
             Destroy(collision.gameObject);
             ShowCollectText();
