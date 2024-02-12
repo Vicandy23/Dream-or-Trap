@@ -25,7 +25,7 @@ public class ButtonScript : MonoBehaviour
         // If the text is being activated, set its content
         if (textDisplay.gameObject.activeSelf)
         {
-            textDisplay.text = "Right arrow - right movement\n" + " Left arrow - Left movement\n" + " V key - Jump";
+            textDisplay.text = "Right arrow - right movement\n" + " Left arrow - Left movement\n" + " Space - Jump";
         }
     }
 
