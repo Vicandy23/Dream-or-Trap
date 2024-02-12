@@ -3,23 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Dialogue : MonoBehaviour
+public class Dialogue2 : MonoBehaviour
 {
-
     public TextMeshProUGUI textComponent;
     public string[] lines;
     public float textSpeed;
+    public GameObject buttonToShow; // Reference to the button you want to show
 
     private int index;
 
-    // Start is called before the first frame update
     void Start()
     {
         textComponent.text = string.Empty;
         StartDialogue();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q))
@@ -36,11 +34,13 @@ public class Dialogue : MonoBehaviour
         }
 
     }
+
     void StartDialogue()
     {
         index = 0;
         StartCoroutine(TypeLine());
     }
+
     IEnumerator TypeLine()
     {
         foreach (char c in lines[index].ToCharArray())
@@ -50,6 +50,7 @@ public class Dialogue : MonoBehaviour
 
         }
     }
+
     void NextLine()
     {
         if (index < lines.Length - 1)
@@ -61,7 +62,9 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
-            gameObject.SetActive(false);
+            // If dialogue ends, activate the button
+            buttonToShow.SetActive(true);
+            gameObject.SetActive(false); // Optionally deactivate the dialogue object
         }
     }
 
