@@ -12,12 +12,8 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundLayer;
     private bool isTouchingGround;
 
-    //public float KBForce;
-    //public float KBCounter;
-    //public float KBTotalTime;
-    //public bool KnockFromRight;
+   
 
-    
 
     void Awake()
     {
@@ -48,5 +44,5 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-   
+  
 }
