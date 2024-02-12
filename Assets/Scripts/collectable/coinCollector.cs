@@ -6,6 +6,7 @@ public class coinCollector : MonoBehaviour
 {
     private int copper = 0;
     [SerializeField] private Text cointext;
+    [SerializeField] private GameObject winObject; // Reference to the GameObject to appear when the player wins
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -18,17 +19,10 @@ public class coinCollector : MonoBehaviour
             // Check if the player has collected 8 copper coins
             if (copper >= 8)
             {
-                // Call a method to end the game
-                EndGame();
+                // Activate the win object
+                winObject.SetActive(true);
             }
         }
-    }
-
-    private void EndGame()
-    {
-        // Add your code here to end the game, for example:
-        Debug.Log("Game Over!"); // Replace this with your game over logic
-        // You might want to disable player controls, show a game over screen, etc.
     }
 }
 

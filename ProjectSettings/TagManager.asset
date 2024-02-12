@@ -9,6 +9,8 @@ TagManager:
   - Collectable
   - Hades
   - GM
+  - hades
+  - TargetPoint
   layers:
   - Default
   - TransparentFX
